@@ -1,5 +1,5 @@
 stimuli_duration = 1000
-feedback_duration = 1000 
+feedback_duration = 2000 
 
 var stimulus = [ 'f1_1', 'f1_2', 'f1_3', 'f1_4', 'f2_1',  'f2_2',
                   'f2_3',  'f2_4',  'f3_1', 'f3_2', 'f3_3',  'f3_4', 
@@ -279,7 +279,7 @@ var practice_choice = {
     }
   },
   choices : ['j', 'f'],
-  trial_duration: 1500,
+  trial_duration: 4000,
   data : {
     correct_choice: jsPsych.timelineVariable('correct_choice'),
     color: jsPsych.timelineVariable('color'),
