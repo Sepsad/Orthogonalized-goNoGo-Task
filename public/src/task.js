@@ -143,10 +143,10 @@ var instruction_before_practice = {
   type: 'instructions',
   pages:     ['<table style="margin-left:auto;margin-right:auto;table-layout:fixed !important; width:900px;"><tr>' +
 
-  '<td><img src="img/stim/f1_1.PNG" style="width: 200px;"></td>' +
-  '<td><img src="img/stim/f1_2.PNG" style="height: 200px; "></td>' +
-  '<td><img src="img/stim/f1_3.PNG" style="height: 200px; "></td>' +
-  '<td><img src="img/stim/f1_4.PNG" style="height: 200px; "></td>' +
+  '<td><img src="img/f1_1.PNG" style="width: 200px;"></td>' +
+  '<td><img src="img/f1_2.PNG" style="height: 200px; "></td>' +
+  '<td><img src="img/f1_3.PNG" style="height: 200px; "></td>' +
+  '<td><img src="img/f1_4.PNG" style="height: 200px; "></td>' +
   '</tr><tr>' +
   '<td>go2win</td><td>noGo2win</td><td>go2avoidPun</td><td>noGo2avoidPun</td>'+
   '</tr><tr>'+
