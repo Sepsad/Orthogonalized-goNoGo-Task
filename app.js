@@ -20,7 +20,7 @@ app.get("/", function (request, response) {
 
 
 // SERVER
-var server = app.listen(5000, function(){
+var server = app.listen(process.env.PORT || 5000, function(){
     console.log("listening to port %d", server.address().port);
 }); 
 
