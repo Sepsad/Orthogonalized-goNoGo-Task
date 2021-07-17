@@ -9,9 +9,9 @@ var stimulus = [ 'f1_1', 'f1_2', 'f1_3', 'f1_4', 'f2_1',  'f2_2',
 circle_side_dict = { 'right' : 'j', 'left': 'f', null : null }
 squares0 = ['f1_1', 'f1_2', 'f1_3', 'f1_4']
 
-win_feedback = "img/feedback/positiveFB.png" 
-lose_feedback = "img/feedback/negativeFB.png"
-neutral_feedback = "img/feedback/neutralFB.png"
+win_feedback = "img/feedback/positiveFB.jpg" 
+lose_feedback = "img/feedback/negativeFB.jpg"
+neutral_feedback = "img/feedback/neutralFB.jpg"
 
 prob_outcome = 80   // keep it a whole number
 reps_in_trial = 12  //reps_in_trial * 4 = actual number of reps in the trial/practice block (i.e. 15*4 = 60 )
@@ -143,10 +143,10 @@ var instruction_before_practice = {
   type: 'instructions',
   pages:     ['<table style="margin-left:auto;margin-right:auto;table-layout:fixed !important; width:900px;"><tr>' +
 
-  '<td><img src="img/f1_1.PNG" style="width: 200px;"></td>' +
-  '<td><img src="img/f1_2.PNG" style="height: 200px; "></td>' +
-  '<td><img src="img/f1_3.PNG" style="height: 200px; "></td>' +
-  '<td><img src="img/f1_4.PNG" style="height: 200px; "></td>' +
+  '<td><img src="img/f1_1.jpg" style="width: 200px;"></td>' +
+  '<td><img src="img/f1_2.jpg" style="height: 200px; "></td>' +
+  '<td><img src="img/f1_3.jpg" style="height: 200px; "></td>' +
+  '<td><img src="img/f1_4.jpg" style="height: 200px; "></td>' +
   '</tr><tr>' +
   '<td>go2win</td><td>noGo2win</td><td>go2avoidPun</td><td>noGo2avoidPun</td>'+
   '</tr><tr>'+
