@@ -7,7 +7,7 @@
     "start":"node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Sepsad",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
