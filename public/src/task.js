@@ -9,9 +9,9 @@ var stimulus = [ 'f1_1', 'f1_2', 'f1_3', 'f1_4', 'f2_1',  'f2_2',
 circle_side_dict = { 'right' : 'j', 'left': 'f', null : null }
 squares0 = ['f1_1', 'f1_2', 'f1_3', 'f1_4']
 
-win_feedback = "img/feedback/positiveFB.jpg" 
-lose_feedback = "img/feedback/negativeFB.jpg"
-neutral_feedback = "img/feedback/neutralFB.jpg"
+win_feedback = "img/feedback/win.jpg" 
+lose_feedback = "img/feedback/lose.jpg"
+neutral_feedback = "img/feedback/neutral.jpg"
 
 prob_outcome = 80   // keep it a whole number
 reps_in_trial = 12  //reps_in_trial * 4 = actual number of reps in the trial/practice block (i.e. 15*4 = 60 )
