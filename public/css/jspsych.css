@@ -6,6 +6,7 @@
  */
 
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 
 /* Container holding jsPsych content */
 
@@ -203,4 +204,27 @@
 /* Control appearance of jsPsych.data.displayData() */
 #jspsych-data-display {
   text-align: left;
+}
+
+#jspsych-circle-stimulus{
+  border:3px solid red; 
+  padding: 0;
+  margin: auto;
+  display: block;
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+}
+
+
+.instruction {
+  text-align:left;
+  background-color: white;
+  width: 600px;
+  border: 10px solid green;
+  padding:40px;
+  /* margin: 10px; */
+  margin: auto;
 }

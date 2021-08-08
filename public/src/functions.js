@@ -11,30 +11,71 @@ function shuffler(listy){
    }
 
 
-function create_target(side) {
-  index = Math.floor(Math.random()*9)
-
-  target = "img/Target_images/" + side + "_stimuli_" + index + ".jpg"
-  return target
-
-}
   
 function make_stimuli(trial, stim, block_num) {  // generates the stimuli from the square images
-     if (trial === true){
-       stimulus = [
-           {stimulus: 'img/' + stim[0] + '.jpg', correct_choice: shuffler(['right', 'left'])[0] ,color: stim[0], cond: 1, cond_name: 'go2win',  exp_part: 'practice', block: block_num},
-           {stimulus: 'img/' + stim[1] + '.jpg', correct_choice: null ,color: stim[1], cond: 2, cond_name: 'noGo2win',  exp_part: 'practice', block: block_num},
-           {stimulus: 'img/' + stim[2] + '.jpg', correct_choice: shuffler(['right', 'left'])[0] ,color: stim[2], cond: 3, cond_name: 'go2avoidPun',  exp_part: 'practice', block: block_num},
-           {stimulus: 'img/' + stim[3] + '.jpg', correct_choice: null ,color: stim[3], cond: 4, cond_name: 'noGo2avoidPun',  exp_part: 'practice', block: block_num}
-          ];
-     }
-     else{
-       stimulus = [
-        {stimulus: 'img/' + stim[0] + '.jpg', correct_choice: shuffler(['right', 'left']) ,color: stim[0], cond: 1, cond_name: 'go2win',  exp_part: 'main', block: block_num         },
-        {stimulus: 'img/' + stim[1] + '.jpg', correct_choice: null ,color: stim[1], cond: 2, cond_name: 'noGo2win',  exp_part: 'main', block: block_num},
-        {stimulus: 'img/' + stim[2] + '.jpg', correct_choice: shuffler(['right', 'left']) ,color: stim[2], cond: 3, cond_name: 'go2avoidPun',  exp_part: 'main', block: block_num},
-        {stimulus: 'img/' + stim[3] + '.jpg', correct_choice: null ,color: stim[3], cond: 4, cond_name: 'noGo2avoidPun',  exp_part: 'main', block: block_num}
-       ];
-     }
-     return stimulus
-   };
+  if (trial === true){
+    stimulus = [
+        {stimulus: '../img/stim/' + stim[0] + '.png', data: {color: stim[0], cond: 1, cond_action: 'go', cond_outcome: 'win',  exp_part: 'practice', block: block_num}},
+        {stimulus: '../img/stim/' + stim[1] + '.png', data: {color: stim[1], cond: 2, cond_action: 'nogo', cond_outcome: 'win'  ,exp_part: 'practice', block: block_num}},
+        {stimulus: '../img/stim/' + stim[2] + '.png', data: {color: stim[2], cond: 3, cond_action: 'go', cond_outcome: 'avoidPun' ,exp_part: 'practice', block: block_num}},
+        {stimulus: '../img/stim/' + stim[3] + '.png', data: {color: stim[3], cond: 4, cond_action: 'nogo', cond_outcome: 'avoidPun' ,exp_part: 'practice', block: block_num}},
+    ];
+  }
+  else{
+    stimulus = [
+      {stimulus: '../img/stim/' + stim[0] + '.png', data: {color: stim[0], cond: 1, cond_action: 'go', cond_outcome: 'win',  exp_part: 'main', block: block_num}},
+      {stimulus: '../img/stim/' + stim[1] + '.png', data: {color: stim[1], cond: 2, cond_action: 'nogo', cond_outcome: 'win',  exp_part: 'main', block: block_num}},
+      {stimulus: '../img/stim/' + stim[2] + '.png', data: {color: stim[2], cond: 3, cond_action: 'go', cond_outcome: 'avoidPun',   exp_part: 'main', block: block_num}},
+      {stimulus: '../img/stim/' + stim[3] + '.png', data: {color: stim[3], cond: 4, cond_action: 'nogo', cond_outcome: 'avoidPun',  exp_part: 'main', block: block_num}},
+    ];
+  }
+  return stimulus
+};
+
+
+function give_reward(condition, result, prob_fall) {
+
+  random = Math.floor(Math.random()*100)
+
+  //  win conditions
+  if (condition == 'win') {
+    if(result == true) {
+      if (random <= prob_fall) {
+        return ['win', 1, prob_fall, true] 
+        }
+      else {
+        return ['neutral', 0, 100-prob_fall, false] 
+      }
+    }
+    else if (result == false){
+      if(random <= prob_fall){
+        return ['neutral', 0, prob_fall, true]
+      }
+      else{
+        return ['win', 1, 100-prob_fall, false]
+      }
+    }
+  }
+  // avoid punishment condition
+  else if (condition == 'avoidPun') {
+    if(result == true){
+      if(random <= prob_fall){
+        return ['neutral', 0, prob_fall, true]
+      }
+      else {
+        return ['lose', -1, 100-prob_fall,false]
+      }
+    }
+    else if (result == false)
+    {
+      if(random <= prob_fall){
+        return ['lose', -1, prob_fall, true]
+      }
+      else {
+        return ['neutral', 0, 100-prob_fall,false]
+      }
+    }
+  }
+};
+
+

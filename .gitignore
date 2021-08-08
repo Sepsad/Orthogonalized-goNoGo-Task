@@ -1,4 +1,5 @@
 .env
 node_modules
 docs
+/.DS_Store
 .DS_Store
