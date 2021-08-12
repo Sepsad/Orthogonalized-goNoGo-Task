@@ -220,11 +220,14 @@
 
 
 .instruction {
-  text-align:left;
+  font-size: larger;
+  text-align: justify;
+  text-justify: inter-word;
   background-color: white;
-  width: 600px;
+  /* width: 600px; */
+  width: 45vw;
   border: 10px solid green;
-  padding:40px;
+  padding:20px;
   /* margin: 10px; */
   margin: auto;
 }

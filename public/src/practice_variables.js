@@ -1,6 +1,7 @@
-stimuli_duration = 1000
-feedback_duration = 2000 
-
+stimuli_duration = 1000;
+fixation_before_feedback_duration = 1000;
+feedback_duration = 1000 ;
+target_detection_task_duration = 1500;
 
 
 
@@ -27,7 +28,7 @@ var practice_fixation_before_target_detection = {
   choices: jsPsych.NO_KEYS,
   data: jsPsych.timelineVariable('data'),
   trial_duration: function(){
-    return jsPsych.randomization.sampleWithoutReplacement([750, 900, 1050, 1200, 1350, 1500, 1650, 1900], 1)[0];
+    return jsPsych.randomization.sampleWithoutReplacement([750, 900, 1050, 1200, 1350, 1500, 1650, 1800, 1950], 1)[0];
   },
   on_finish: function(data) {
     jsPsych.data.addDataToLastTrial({
@@ -43,7 +44,7 @@ var practice_target_detection_task = {
   type: 'circle-keyboard-response',
   choices: ['ArrowLeft', 'ArrowRight'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 1500,
+  trial_duration: target_detection_task_duration,
 
   on_finish: function(data){
 

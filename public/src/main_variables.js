@@ -1,13 +1,14 @@
 stimuli_duration = 1000;
-feedback_duration = 2000; 
+fixation_before_feedback_duration = 1000;
+feedback_duration = 1000 ;
+target_detection_task_duration = 1500;
 
-
-error_rate_cap = 0.7
+error_rate_cap = 0.8
 
 var start_main = 
 {
   type: 'html-button-response',
-  stimulus: "<h1 class= 'instruction' >Let's Play! Are you ready? &#128170;</h1> <p class= 'instruction'> Please note that if you respond randomly, always press, or never press, we reserve the right to withold your bonus.</p> <p>Click on start.</p>",
+  stimulus: "<h1 class= 'instruction' style = 'font-size: xx-large' >Let's Play! Are you ready? &#128170;</h1> <p class= 'instruction'> Please note that if you respond randomly, always press, or never press, We will not be able to pay you.</p> <p>Click on start.</p>",
   data: {},
   choices: ['Start'],
   on_finish: function(data) {
@@ -41,7 +42,7 @@ var main_fixation_before_target_detection = {
   choices: jsPsych.NO_KEYS,
   data: jsPsych.timelineVariable('data'),
   trial_duration: function(){
-    return jsPsych.randomization.sampleWithoutReplacement([750, 900, 1050, 1200, 1350, 1500, 1650, 1900], 1)[0];
+    return jsPsych.randomization.sampleWithoutReplacement([750, 900, 1050, 1200, 1350, 1500, 1650, 1800, 1950], 1)[0];
   },
   on_finish: function(data) {
     jsPsych.data.addDataToLastTrial({
@@ -57,7 +58,7 @@ var main_target_detection_task = {
   type: 'circle-keyboard-response',
   choices: ['ArrowLeft', 'ArrowRight'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 1500,
+  trial_duration: target_detection_task_duration,
 
   on_finish: function(data){
 
@@ -104,7 +105,7 @@ var main_fixation_before_feedback = {
   stimulus: '<div style="font-size:60px;">+</div>',
   choices: jsPsych.NO_KEYS,
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 1000,
+  trial_duration: fixation_before_feedback_duration,
   on_finish: function() {
     jsPsych.data.addDataToLastTrial({
       exp_stage:"main_iti_before_feedback",
@@ -168,7 +169,7 @@ function between_block(percent) {
 
         return ["<p class= 'instruction'> You have completed " + percent + " of the task" + 
         //  "and earned <b>"+ rounded_bonus + "</b> bonus points in total!</p>"+
-                "<br>Feel free to take a few seconds break, but not too long. This will time out after 1 minute.</p>"+
+                "<br>Feel free to take a few seconds to break. This will time out after 1 minute.</p>"+
                 "<p>Click any key to continue.</p>"];
       },
       data: {},
@@ -227,7 +228,7 @@ var end_main_bonus_block = {
       return ['<p class= "instruction">This marks the end of the experiment.' +
               '<br>You earned <b>' + rounded_bonus + ' bonus points </b>!' +
               '<br>Thank you so much for your participation.</p>' +
-              '<p>Click <q>Next</q> to continue to the demographic survey.</p>'];
+              '<p>Click <q>Next</q> to finish the experiment</p>'];
     },
     show_clickable_nav: true,
     on_finish: function(data) {
