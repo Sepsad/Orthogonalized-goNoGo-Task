@@ -1,12 +1,4 @@
-stimuli_duration = 1000
-feedback_duration = 2000 
-
-
-
 squares0 = ['f1_1', 'f1_2', 'f1_3', 'f1_4']
-
-
-
 
 win_feedback = "<p style='font-size:150px;'>&#9989;&#128176;&#9989;</p>"
 lose_feedback = "<p style='font-size:150px;'>&#10060;&#128184;&#10060;</p>"
@@ -31,6 +23,11 @@ var timeline = [];
 // full screen mode 
 
 
+var experiment_id =  jsPsych.randomization.randomID(8); // Random subject ID
+jsPsych.data.addProperties({
+  experiment_id: experiment_id
+});
+
 
 var first_welcome_page ={
   type: 'html-button-response',
@@ -53,15 +50,25 @@ timeline.push(first_welcome_page)
 
 
 var subjectId_page = {
-    type: 'survey-text'
-    ,
+    type: 'survey-text',
     data: {},
     questions: [
       {prompt: "Please enter your Email (we'd use that as your username.)", columns: 50, required: true, name: 'email'},
       {prompt: 'Please enter your phone number so we could inform you of the next experiment', columns: 50, required: true, name: 'phoneNumber'},
       ],
-    preamble: "<h1>Hello</h1>"
+    preamble: "<h1>Hello</h1>",
+    on_finish :function(data) {
+      jsPsych.data.addProperties({
+        username : data.response.email,
+        phoneNumber: data.response.phoneNumber
+      })
+      
+    }
   };
+
+
+
+
 
   timeline.push(subjectId_page)
 
@@ -97,10 +104,10 @@ var fullscreen = {
   on_finish: function(data) {
     jsPsych.data.addDataToLastTrial({
       exp_stage:"fullscreen",
-      // primary_key: subjectId + '_' + weekId + '_' + expId + '_' + data.trial_index,
       exp_part: "fullscreen"
     })
   }
+
 };
 timeline.push(fullscreen)
 
