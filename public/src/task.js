@@ -133,7 +133,7 @@ var practice_instructions_texts = {
 
   welcome_page : "<h1 class= 'instruction' style = 'font-size: xx-large' >Let's Practice! &#128170;</h1> <p>Click the <q>Next</q> button to continue.</p>",
 
-  first_page : "<p class= 'instruction'> Here are some example images you will see during the practice. </p>" +
+  first_page : "<p class= 'instruction'> Here are images you will see during the practice.<br> Note that you will get the outcome by taking the best strategy. </p>" +
   '<table style="margin-left:auto;margin-right:auto;table-layout:fixed !important; width:500px;border-spacing:1em;"><tr>' +
   '<td> Image </td> '+ '<td> Best Strategy</td>' + '<td> Outcome</td>' +
   '</tr><tr>' +

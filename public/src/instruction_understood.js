@@ -97,8 +97,11 @@ var instructions = {
 var instruction_questions = {
     type:'survey-multi-choice',
     questions: [
-      {prompt: "What action do you take for this task",
-        options: ["I either click a button on the screen or wait (click nothing)", "I either press the space bar or wait (press nothing)", "I either press the right arrows on my keyboard or wait (press nothing)", "I either press the left or right arrow on my keyboard to indicate my choice or wait (press nothing)"]},
+      {prompt: "What action do you take when you see the circle?",
+        options: ["I either click a button on the screen or click nothing",
+                  "I either press the space bar or press nothing.", 
+                  "I either press the left or right arrow on my keyboard to indicate my choice.", 
+                  "I either press the left or right arrow on my keyboard to indicate my choice or press nothing."]},
       {prompt: "In the game, how many different images will you see?",
         options: ["1", "2", "3", "4" ]}
       ],
