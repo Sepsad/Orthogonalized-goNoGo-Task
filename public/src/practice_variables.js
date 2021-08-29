@@ -4,9 +4,6 @@ feedback_duration = 1000 ;
 target_detection_task_duration = 1500;
 
 
-
-
-
 var practice_stimulus = {
     type: 'image-keyboard-response',
     stimulus : jsPsych.timelineVariable('stimulus'),
@@ -36,8 +33,6 @@ var practice_fixation_before_target_detection = {
     })
   }
 };
-
-
 
 // target detection
 var practice_target_detection_task = {
@@ -124,15 +119,15 @@ var practice_feedback = {
   }
 }
 
-
-
 var practice_fixation_before_stimulus = {
   type: 'html-keyboard-response',
   stimulus: '<div style="font-size:60px;">+</div>',
   choices: jsPsych.NO_KEYS,
   data: jsPsych.timelineVariable('data'),
   trial_duration: function(){
-    return jsPsych.randomization.sampleWithoutReplacement([750, 900, 1050, 1200, 1350, 1500], 1)[0];
+    return jsPsych.randomization.sampleWithoutReplacement(
+      [750, 900, 1050, 1200, 1350, 1500], 1
+    )[0];
   },
   on_finish: function(data) {
     jsPsych.data.addDataToLastTrial({
@@ -140,29 +135,3 @@ var practice_fixation_before_stimulus = {
     })
   }
 };
-
-
-
-var end_practice_trial = {
-    type: 'html-keyboard-response',
-    stimulus: '<p class= "instruction">This marks the end of the Practice Trial.</p> <p>Press any key to continue to the main game.</p>',
-    data: {},
-    on_finish: function(data) {
-      const practice_data = jsPsych.data.get().last(6*4*reps_in_trial);
-      block_corr = practice_data.filter({exp_stage: 'practice_target_detection', correct: true}).count();
-      data.error_block = 1-(block_corr/(4*reps_in_trial));
-  
-      data.num_gos = practice_data.filter({exp_stage: 'practice_target_detection', choice: 'go'}).count();
-      data.num_nogos = practice_data.filter({exp_stage: 'practice_target_detection', choice: 'nogo'}).count();
-  
-      jsPsych.data.addDataToLastTrial({
-        exp_stage:"practice_end",
-        suspicious: false,
-        block: 'block_p',
-        exp_part: "practice"
-      })
-    }
-  };
-
-
-

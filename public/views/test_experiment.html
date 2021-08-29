@@ -2,26 +2,48 @@
 
 
 <html>
+
 <head>
-    <title> Go/NoGo Task</title>
+	<title> Go/NoGo Task</title>
 
-    <script src="../../js/jspsych.js"></script>
-    <script src="../../js/plugins/jspsych-html-keyboard-response.js"></script>
-    <script src="../../js/plugins/jspsych-html-button-response.js"></script>
-    <script src="../../js/plugins/jspsych-image-keyboard-response.js"></script>
-    <script src="../../js/plugins/jspsych-survey-text.js"></script>
-    <script src="../../js/plugins/jspsych-survey-multi-choice.js"></script>
-    <script src="../../js/plugins/jspsych-instructions.js"></script>
-    <script src="../../js/plugins/jspsych-external-html.js"></script>
-    <script src="../../jspsych-circle-target-keyboard-response.js"></script>
-    <script src="../../js/plugins/jspsych-fullscreen.js"></script>
-    <link rel="stylesheet" href="../css/jspsych.css"> </link>
+	<!-- jspsych library -->
+	<script src="../../js/jspsych.js"></script>
+	<script src="../../jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+	<script src="../../jspsych/plugins/jspsych-html-button-response.js"></script>
+	<script src="../../jspsych/plugins/jspsych-image-keyboard-response.js"></script>
+	<script src="../../jspsych/plugins/jspsych-survey-text.js"></script>
+	<script src="../../jspsych/plugins/jspsych-survey-multi-choice.js"></script>
+	<script src="../../jspsych/plugins/jspsych-instructions.js"></script>
+	<script src="../../jspsych/plugins/jspsych-external-html.js"></script>
+	<script src="../../jspsych/jspsych-circle-target-keyboard-response.js"></script>
+	<script src="../../jspsych/plugins/jspsych-fullscreen.js"></script>
+	<link rel="stylesheet" href="../css/jspsych.css">
+	</link>
 
-    <script src="../src/practice_variables.js"></script>
-    <script src="../src/instructions.js"></script>
-    <script src ="../src/instruction_understood.js"></script>
-    <script src="../src/main_variables.js"></script>
-    <script src="../src/functions.js"></script>
+	<script src="../src/definitions.js"></script>
+	<script src="../src/functions.js"></script>
+	<script src="../src/practice_variables.js"></script>
+	<script src="../src/main_variables.js"></script>
+	<script src="../src/on_interaction_data_update.js"></script>
+
+	<script src="../src/expriment_steps/welcome_pages.js"></script>
+	<script src="../src/expriment_steps/form_page.js"></script>
+
+	<script src="../src/expriment_steps/introduction/fullscreen_intro_page.js"></script>
+	<script src="../src/expriment_steps/introduction/fullscreen.js"></script>
+	<script src="../src/expriment_steps/introduction/instructions.js"></script>
+	<script src="../src/expriment_steps/introduction/instruction_questions.js"></script>
+	<script src="../src/expriment_steps/introduction/questions_fail.js"></script>
+	<script src="../src/expriment_steps/introduction/instruction_repeat.js"></script>
+
+	<script src="../src/expriment_steps/practice/practice_instructions.js"></script>
+	<script src="../src/expriment_steps/practice/practice_trial_procedure.js"></script>
+	<script src="../src/expriment_steps/practice/practice_trial_end.js"></script>
+
+	<script src="../src/expriment_steps/main/main_start_page.js"></script>
+	<script src="../src/expriment_steps/main/main_trial_procedure.js"></script>
+	<script src="../src/expriment_steps/main/main_between_block.js"></script>
+	<script src="../src/expriment_steps/main/main_end_bonus_block.js"></script>
 
 </head>
 

@@ -5,19 +5,7 @@ target_detection_task_duration = 1500;
 
 error_rate_cap = 0.8
 
-var start_main = 
-{
-  type: 'html-button-response',
-  stimulus: "<h1 class= 'instruction' style = 'font-size: xx-large' >Let's Play! Are you ready? &#128170;</h1> <p class= 'instruction'> Please note that if you respond randomly, always press, or never press, We will not be able to pay you.</p> <p>Click on start.</p>",
-  data: {},
-  choices: ['Start'],
-  on_finish: function(data) {
-    jsPsych.data.addDataToLastTrial({
-      exp_stage:"main_start",
-      exp_part:"main"
-    })
-  }
-}
+
 
 
 
@@ -160,110 +148,7 @@ var main_fixation_before_stimulus = {
 
 
 
-function between_block(percent) {
-    return {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        // var bonus = jsPsych.data.get().last(2).values()[0].curr_bonus;
-        // var rounded_bonus = Math.round(bonus)
-
-        return ["<p class= 'instruction'> You have completed " + percent + " of the task" + 
-        //  "and earned <b>"+ rounded_bonus + "</b> bonus points in total!</p>"+
-                "<br>Feel free to take a few seconds to break. This will time out after 1 minute.</p>"+
-                "<p>Click any key to continue.</p>"];
-      },
-      data: {},
-      trial_duration: 60000,
-      response_ends_trial: true,
-      on_finish: function(data) {
-      var curr_block = jsPsych.data.get().last(2).values()[0].block;
-      data.num_gos = jsPsych.data.get().filter({choice: 'go' , exp_stage: 'main_target_detection', block: curr_block}).count()
-      data.num_nogos = jsPsych.data.get().filter({choice: 'nogo', exp_stage: 'main_target_detection', block: curr_block}).count()
-      // data.num_nogos = (2*reps_in_exp)- data.num_gos
-
-      num_trials = jsPsych.data.get().filter({exp_stage: 'main_target_detection', block: curr_block}).count()
-
-      ttl_correct = jsPsych.data.get().filter({exp_stage: 'main_target_detection', correct: true, block: curr_block}).count()
-      error_rate = 1 - (ttl_correct/num_trials)
-      data.error_block = error_rate
-
-      num_trials = jsPsych.data.get().filter({exp_stage: 'main_target_detection', block: curr_block}).count()
-
-      if (data.num_gos == num_trials){
-          data.suspicious_type = 'all_one'
-          data.suspicious = true
-      }
-      else if (data.num_gos == 0){
-          data.suspicious_type = 'time_outs'
-          data.suspicious = true
-      }
-      else if (error_rate >= error_rate_cap){
-          data.suspicious_type = 'error_rate'
-          data.suspicious = true
-      }
-      else{
-          data.suspicious = false
-      }
-      data.block = curr_block // defines as this block after the filtering to determine num gos
-      data.exp_part = 'main'
-
-      jsPsych.data.addDataToLastTrial({
-        exp_stage:"between_block",
-      })
-    }
-  }
-};
 
 
-var end_main_bonus_block = {
-    type: 'instructions',
-    data: {},
-    pages: function() {
-      var bonus = jsPsych.data.get().last(4).values()[0].curr_bonus
-      var rounded_bonus = Math.round(bonus)
-      if (rounded_bonus < fixed_bonus){
-        rounded_bonus = fixed_bonus
-      }
-
-      return ['<p class= "instruction">This marks the end of the experiment.' +
-              '<br>You earned <b>' + rounded_bonus + ' bonus points </b>!' +
-              '<br>Thank you so much for your participation.</p>' +
-              '<p>Click <q>Next</q> to finish the experiment</p>'];
-    },
-    show_clickable_nav: true,
-    on_finish: function(data) {
-      var curr_block = jsPsych.data.get().last(4).values()[0].block;
-      data.num_gos = jsPsych.data.get().filter({choice: 'go', exp_stage: 'main_target_detection', block: curr_block}).count()
-      data.num_nogos = jsPsych.data.get().filter({choide: 'nogo', exp_stage: 'main_target_detection', block: curr_block}).count()
-      // data.num_nogos = (2*reps_in_exp)- data.num_gos
-
-      num_trials = jsPsych.data.get().filter({exp_stage: 'main_target_detection', block: curr_block}).count()
-      ttl_correct = jsPsych.data.get().filter({exp_stage: 'main_target_detection', correct: true, block: curr_block}).count()
-      error_rate = 1 - (ttl_correct/num_trials)
-      data.error_block = error_rate
 
 
-      if (data.num_gos == num_trials){
-          data.suspicious_type = 'all_one'
-          data.suspicious = true
-      }
-      else if (data.num_gos == 0){
-          data.suspicious_type = 'time_outs'
-          data.suspicious = true
-      }
-      else if (error_rate >= error_rate_cap){
-          data.suspicious_type = 'error_rate'
-          data.suspicious = true
-      }
-      else{
-          data.suspicious = false
-      }
-      data.block = curr_block // defines as this block after the filtering to determine num gos
-      data.exp_part = 'main'
-
-    jsPsych.data.addDataToLastTrial({
-      exp_stage:"end_main_bonus",
-
-    })
-  }
-  };
