@@ -11,7 +11,7 @@ reps_in_exp = 10    // reps_in_exp * 4 = actual number of reps in the experiment
 bonus_percent = 20/(reps_in_exp*2*4) 
 fixed_bonus = 0     // 0
 
-const images = ['../img/welcome.gif', 
+const images_preload = ['../img/welcome.gif', 
                 "../img/stim/f1_1.png","../img/stim/f1_2.png", "../img/stim/f1_3.png","../img/stim/f1_4.png",
                 '../img/page1.png', '../img/page2.png', '../img/stim/f3_1.png', '../img/eighth_3_page.png',
                 "../img/doing.png", "../img/holding.png",

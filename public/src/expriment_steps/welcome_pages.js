@@ -8,7 +8,8 @@ var first_welcome_page ={
 		exp_stage:"first_welcome",
 		})
 	},
-	on_start: function() {
-		preloadImages(images);
-	}
+	// on_start: function() {
+	// 	// preloadImages(images);
+	// 	// return
+	// }
 }

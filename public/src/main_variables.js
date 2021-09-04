@@ -6,6 +6,11 @@ target_detection_task_duration = 1500;
 error_rate_cap = 0.8
 
 
+var preload = {
+  type: 'preload',
+  // auto_preload: true 
+  images: images_preload,
+}
 
 
 

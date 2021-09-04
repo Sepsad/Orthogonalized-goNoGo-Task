@@ -9,10 +9,10 @@ var main_end_bonus_block = {
 		}
 
 		return [
-			'<p class= "instruction">This marks the end of the experiment.' +
+			'<p class= "instruction">Great! Congratulations!' +
 			'<br>You earned <b>' + rounded_bonus + ' bonus points </b>!' +
-			'<br>Thank you so much for your participation.</p>' +
-			'<p>Click <q>Next</q> to finish the experiment</p>'
+			// '<br>Thank you so much for your participation.</p>' +
+			'<p>Click <q>Next</q></p>'
 		];
 	},
 	show_clickable_nav: true,

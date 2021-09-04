@@ -5,7 +5,8 @@ var express = require("express");
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
-app.use("/js", express.static(__dirname + '/js'));
+app.use("/jsPsych", express.static(__dirname + '/jsPsych'));
+console.log(__dirname + '/jsPsych');
 app.use("/scripts", express.static(__dirname + '/scripts'));
 
 
