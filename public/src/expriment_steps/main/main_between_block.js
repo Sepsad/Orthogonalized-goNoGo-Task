@@ -13,6 +13,9 @@ function main_between_block(percent) {
 		data: {},
 		trial_duration: 60000,
 		response_ends_trial: true,
+		on_load: function() {
+			document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
+		},
 		on_finish: function(data) {
 			var curr_block = jsPsych.data.get().last(2).values()[0].block;
 			data.num_gos = jsPsych.data.get().filter({choice: 'go' , exp_stage: 'main_target_detection', block: curr_block}).count()

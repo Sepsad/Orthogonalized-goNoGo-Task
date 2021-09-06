@@ -16,6 +16,9 @@ var main_end_bonus_block = {
 		];
 	},
 	show_clickable_nav: true,
+	on_load: function() {
+		document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
+	},
 	on_finish: function(data) {
 		var curr_block = jsPsych.data.get().last(4).values()[0].block;
 		data.num_gos = jsPsych.data.get().filter({choice: 'go', exp_stage: 'main_target_detection', block: curr_block}).count()

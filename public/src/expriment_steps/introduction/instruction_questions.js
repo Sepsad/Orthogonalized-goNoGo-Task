@@ -17,6 +17,9 @@ var instruction_questions = {
 	],
 	required: true,
 	data: {},
+	on_load: function() {
+		document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
+	},
 	on_finish: function(data) {
 		jsPsych.data.addDataToLastTrial({
 			exp_stage:"instruction_questions",

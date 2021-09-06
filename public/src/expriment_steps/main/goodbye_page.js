@@ -11,6 +11,9 @@ var goodbye_page ={
 	}  ,
 	choices: jsPsych.NO_KEYS,
 	data: {},
+	on_load: function() {
+		document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
+	},
 	on_finish: function() {
 		jsPsych.data.addDataToLastTrial({
 		exp_stage:"goodbye",

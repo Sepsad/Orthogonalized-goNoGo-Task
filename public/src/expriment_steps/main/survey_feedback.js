@@ -4,5 +4,8 @@ var survey_feedback = {
                  value: 'Feedbacks',
                  rows: 20,
                  columns: 100}],
-    button_label: 'Submit Answer'
+    button_label: 'Submit Answer',
+    on_load: function() {
+      document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
+    },
   };

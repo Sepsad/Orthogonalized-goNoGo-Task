@@ -11,8 +11,8 @@ var instructions_texts = {
 	,
                  
 	sixth_page : 
-		"<div class= 'instruction'> <p>There are 4 of these images. One image will appear at the beginning of each trial. </p> "+
-		" <p>Depending on what image you see, by trial and error you must find out what is best to do (to press a button or not to press it) when you see the circle. </p>"+
+		"<div class= 'instruction'> <p>There are 4 types of images. One of them will appear at the beginning of each trial.</p> "+
+		" <p>Depending on what image you see, by trial and error you must find out what is best to do (<u>to press a button</u> or <u>not to press it</u>) when you see the circle. </p>"+
 		"<p>By finding out what to do for each image, you will increase your chances of winning and decrease the chance of losing. </p> </div>" + 
   	"<img src='../img/page2.png' width='70%' height='70%'>",
   
@@ -25,16 +25,16 @@ var instructions_texts = {
 		"<p class= 'instruction'> <b>The meaning of each image will be constant throughout the game. <br> However, the game is not easy, so we encourage exploration of all options.</b> </p>",
   
 	third_page : 
-		"<div class= 'instruction'><p> On each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must DECIDE if you will press a button or withhold your response in the next stage.</p></div> "+
+		"<div class= 'instruction'><p> At the beginning of each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must <u>DECIDE</u> if you will <u>press a button</u> or <u>withhold your response</u> in the next stage.</p></div> "+
     " <p> Here is an example of the type of image you will see.</p> <img src='../img/stim/f3_1.png' width='30%' height='30%'>",
   
 	forth_page : 
-		"<div class= 'instruction'> <p> After a short delay, you will see a circle on one side of the screen. </p> "+
+		"<div class= 'instruction'> <p> After a short delay, you will see a circle on one side of the red rectangle is on the center of the screen.</p> "+
     "<p>Depending on what image you saw earlier, here, you execute your plan by either <u>pressing a button</u> (to indicate the circle side) or <u>withhold your response</u>. </p></div>" + 
     "<img src = '../img/eighth_3_page.png' width='50%' height='50%'>",
   
 	fifth_page : 
-		"<p class= 'instruction'>  After a short delay, you will see one of three outcomes: </p>" +
+		"<p class= 'instruction'>  After a short delay, you will see one of three outcomes </p>" +
 		
 		"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
 		"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> '+ '<td> Win </td>" +
@@ -83,11 +83,15 @@ var instructions = {
 		instructions_texts.eleventh_page
 	],
 	show_clickable_nav: true,
-
+	show_page_number: true,
+	show_progress_bar: false,
 	data: {},
+	on_load: function() {
+		document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
+	},
 	on_finish: function(data) {
-
 		jsPsych.data.addDataToLastTrial({
+			
 			exp_stage:"instructions",
 			exp_part: "instructions"
 		})
