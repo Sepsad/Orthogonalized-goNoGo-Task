@@ -87,6 +87,7 @@ jsPsych.data.addProperties({
 jsPsych.init({
     timeline: timeline,
     on_interaction_data_update: on_interaction_data_update,
+    show_progress_bar: true,
     exclusions: {
       min_width: 800,
       min_height: 800
