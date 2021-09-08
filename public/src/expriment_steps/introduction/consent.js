@@ -6,6 +6,7 @@ var consent = {
   //     return true;
   //   },
   cont_btn: "consent",
+  data: {},
   on_load: function () {
     document.getElementById("jspsych-progressbar-container").style.visibility =
       "visible";
