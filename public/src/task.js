@@ -14,6 +14,8 @@ timeline.push(first_welcome_page);
 
 // timeline.push(fullscreen)
 
+timeline.push(before_instructions);
+
 timeline.push(instructions);
 
 //  instruction Questions
@@ -21,6 +23,8 @@ timeline.push(instruction_questions);
 
 // instructuon Questions
 timeline.push(instructions_repeat);
+
+
 
 // practice code
 timeline.push(practice_instruction);
