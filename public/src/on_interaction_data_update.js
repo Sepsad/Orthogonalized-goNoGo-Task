@@ -1,8 +1,15 @@
 function on_interaction_data_update(data) {
 	var trial = jsPsych.currentTrial();
+	try {
 	trial.data.focus_screen = data.event;
-	// trial.data.event = data.event;
 	console.log(data.event);
+		
+	} catch (error) {
+		console.log(error)
+	}
+
+
+	// trial.data.event = data.event;
 
 	// if(data.event == 'fullscreenexit' || data.event == 'blur') {
 	// 	jsPsych.pauseExperiment();
