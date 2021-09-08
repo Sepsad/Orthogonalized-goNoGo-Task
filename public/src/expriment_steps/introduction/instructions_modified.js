@@ -13,16 +13,17 @@ var instructions_texts = {
 	sixth_page : 
 		"<div class= 'instruction'> <p>There are 4 types of images. One of them will appear at the beginning of each trial.</p> "+
 		" <p>Depending on what image you see, by trial and error you must find out what is best to do (<u>to press a button</u> or <u>not to press it</u>) when you see the circle. </p>"+
-		"<p>By finding out what to do for each image, you will increase your chances of winning and decrease the chance of losing. </p> </div>" + 
+		"<p>By finding out what to do for each image, you will increase your chance of winning and decrease the chance of losing. </p> </div>" + 
   	"<img src='../img/page2.png' width='70%' height='70%'>",
   
 	seventh_page : 
-		"<div class= 'instruction'><p>Some of the images predict that you will win some money or get nothing.<br>Other images predict that you will lose some money or lose nothing.</p>"+
-		"<p> Winning or Losing money is probabilistic, but by figuring out the best strategy for each image, you can optimize the probability getting the better outcome. For example, losing nothing is better than losing some money. </p>"+
-		"<p>For some images, the best strategy is to press the button. For some other images, the best strategy is to withhold from responding.</p></div>",
+		"<div class= 'instruction'><p>Some of the images predict that you will <u>win</u> some money or <u>get nothing</u>.<br>Other images predict that you will <u>lose</u> some money or <u>lose nothing</u>.</p>"+
+		"<p> Winning or Losing money is probabilistic, but by figuring out the best strategy for each image, you can optimize the probability of getting the better outcome. For example, losing nothing is better than losing some money. </p>"+
+		"<p>For some images, the best strategy is to <u>press the button</u>. For some other images, the best strategy is to <u>withhold from responding</u>.</p></div>",
   
-	eighth_page : 
-		"<p class= 'instruction'> <b>The meaning of each image will be constant throughout the game. <br> However, the game is not easy, so we encourage exploration of all options.</b> </p>",
+	ninth_page : 
+		"<div class= 'instruction' style= 'text-align: center'><p><b>The meaning of each image will be constant throughout the game. </b></p> " +
+		"<p> <b>However, the game is not easy, so we encourage exploration of all options.</b></p> </div>",
   
 	third_page : 
 		"<div class= 'instruction'><p> At the beginning of each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must <u>DECIDE</u> if you will <u>press a button</u> or <u>withhold your response</u> in the next stage.</p></div> "+
@@ -44,19 +45,19 @@ var instructions_texts = {
 		"<td style='font-size:60px;'>&#x2796;</td>' + '<td> Neither win nor lose</td>" +
 		"</tr></table>",
   
-	ninth_page :  
+	tenth_page :  
 		"<div class= 'instruction'> <p> <b>Remember that, in this task, the outcome is probabilistic.</b></p> "+ 
     "<p> <b> This means that, sometimes even if you know the best strategy, you may still not win, or you may still end up losing.</b> </p>" +
     "<p>  However, remember that for each image there is one best strategy (either <u>Press a Button</u> or <u>Withhold Response</u>) that is more advantageous than the other. <p></div>",
   
-	tenth_page : 
+	eighth_page : 
 		"<div class= 'instruction'> <p>So for the winning conditions you may either get &#9989;&#128176;&#9989; or &#x2796;</p> "+
-    "<p> For the losing condition you may either get &#10060;&#128184;&#10060; or the &#x2796; </p>"+
+    "<p> For the losing condition you may either get &#x2796; or &#10060;&#128184;&#10060; </p>"+
     "<p> By doing the right thing when the circle appears (either <u>Press a Button</u> or <u>Withhold Response</u>) you can make the most favorable outcome more frequent.  </p></div>" + 
     "<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
     "<td>Winning Condition</td> '+ '<td style='font-size:30px;'> &#9989;&#128176;&#9989; or &#x2796;</td>" +
     "</tr><tr>" +
-    "<td s>Losing Condtion</td>' + '<td style='font-size:30px;'> &#10060;&#128184;&#10060; or &#x2796;</td>" +
+    "<td s>Losing Condtion</td>' + '<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
     "</tr></table>",
   
 	eleventh_page : 
