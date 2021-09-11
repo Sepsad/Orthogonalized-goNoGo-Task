@@ -36,3 +36,7 @@
     /* margin: 10px; */
     margin: auto;
   }
+
+  .jspsych-survey-multi-choice-text {
+    text-align: left;
+  }

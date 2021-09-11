@@ -1,10 +1,15 @@
 var instructions_repeat = {
-	timeline: [question_fail, instructions, instruction_questions],
+	timeline: [instructions, instruction_questions, instruction_question_feedback],
 	conditional_function: function() {
-		var dat = jsPsych.data.getLastTrialData().values()[0];
-		var answer1 = (dat.response).Q0;
-		var answer2 = (dat.response).Q1;
-		if(answer1.includes('left or right') == true && answer2.includes('4') == true) {
+		if(score == 4) {
+			return false;
+		} else {
+			return true;
+		}
+
+	},
+	loop_function: function() {
+		if(score == 4) {
 			return false;
 		} else {
 			return true;

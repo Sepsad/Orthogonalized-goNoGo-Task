@@ -21,10 +21,10 @@ timeline.push(instructions);
 //  instruction Questions
 timeline.push(instruction_questions);
 
+timeline.push(instruction_question_feedback)
+
 // instructuon Questions
 timeline.push(instructions_repeat);
-
-
 
 // practice code
 timeline.push(practice_instruction);

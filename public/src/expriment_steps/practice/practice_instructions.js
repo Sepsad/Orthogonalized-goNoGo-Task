@@ -1,4 +1,8 @@
 var practice_instructions_texts = {
+	zeroth_page:
+	"<div class= 'instruction'> <p>From here on in, you will do 12 trials of the Practice and you will be informed when a response is correct and when it is incorrect or too late.</p>"+
+"<p>Thereafter you will proceed with the proper game, which is divided in 3 parts. You can take a break for 1 minute between each part.</p>"+
+"<p> Your total winnings will be counted and you will get paid at the end of the experiment with a minimum of 2$.</p> </div>",
 	welcome_page : 
 		"<h1 class= 'instruction' style = 'font-size: xx-large' >Let's Practice! &#128170;</h1> <p>Click the <q>Next</q> button to continue.</p>",
 
@@ -38,6 +42,7 @@ var practice_instructions_texts = {
 var practice_instruction = {
 	type: 'instructions',
 	pages: [
+		practice_instructions_texts.zeroth_page,
 		practice_instructions_texts.welcome_page,
 		practice_instructions_texts.first_page,
 		practice_instructions_texts.first_prime_page,

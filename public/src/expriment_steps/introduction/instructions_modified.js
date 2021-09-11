@@ -59,11 +59,6 @@ var instructions_texts = {
     "</tr><tr>" +
     "<td s>Losing Condtion</td>' + '<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
     "</tr></table>",
-  
-	eleventh_page : 
-		"<div class= 'instruction'> <p>First, you will do 12 trials of the Practice and you will be informed when a response is correct and when it is incorrect or too late.</p>"+
-    "<p>Thereafter you will proceed with the proper game, which is divided in 4 parts. You can take a break for 1 minute between each part.</p>"+
-    "<p> Your total winnings will be counted and you will get paid at the end of the experiment with a maximum of X$ and a minimum of Y$.</p> </div>",
 
 };
 	
@@ -81,7 +76,6 @@ var instructions = {
 		instructions_texts.eighth_page,
 		instructions_texts.ninth_page,
 		instructions_texts.tenth_page,
-		instructions_texts.eleventh_page
 	],
 	show_clickable_nav: true,
 	show_page_number: true,
