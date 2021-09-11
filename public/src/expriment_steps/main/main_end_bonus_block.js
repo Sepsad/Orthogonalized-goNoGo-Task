@@ -12,7 +12,7 @@ var main_end_bonus_block = {
 			'<p class= "instruction">Great! Congratulations!' +
 			'<br>You earned <b>' + rounded_bonus + ' bonus points </b>!' +
 			// '<br>Thank you so much for your participation.</p>' +
-			'<p>Click <q>Next</q></p>'
+			'<p>Click <q>Next</q> to continue to some demographic questions.</p>'
 		];
 	},
 	show_clickable_nav: true,

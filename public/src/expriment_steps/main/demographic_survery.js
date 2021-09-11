@@ -63,6 +63,12 @@ var demographic_survey = {
   button_label: 'Submit Answer',
 
   on_finish: function (data) {
-      console.log(data)
+      // console.log(data)
+      completion_code = jsPsych.data.get().last(1).values()[0].experiment_id;
+      var goodbye_message = "<h1><strong>Thanks for participating in this game!</strong></h1>" + 
+      "<h3><strong>Your completion code is: <font color='red'>"+ completion_code +"</font></strong></h3>" +
+      "<p>Please copy and paste this into the MTurk window to claim payment.</p>" +
+      "<p>If you have any questions about Go-NoGo Game, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>"
+      jsPsych.endExperiment(goodbye_message);
   }
   };
