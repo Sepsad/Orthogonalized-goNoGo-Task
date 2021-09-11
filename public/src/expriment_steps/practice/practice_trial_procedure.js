@@ -1,7 +1,7 @@
 //stimulus
 squares0 = ["f1_1", "f1_2", "f1_3", "f1_4"];
 stim0 = make_stimuli(true, squares0, "block_p");
-
+reps_in_trial = 3;
 console.log(stim0);
 
 var practice_trial_procedure = {

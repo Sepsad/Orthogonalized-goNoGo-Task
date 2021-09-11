@@ -59,6 +59,9 @@ var instructions_texts = {
     "</tr><tr>" +
     "<td s>Losing Condtion</td>' + '<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
     "</tr></table>",
+	eleventh_page : "<p class= 'instruction' >Now, we are going to check whether you've understood the previous instructions by asking some True/False questions." +
+	 "<br> <br>Plase note that you will not be able to proceed with the experiment until all of these comprehension questions are answered correctly </p>" +
+	 "<p> Click 'Next' to begin the test.</p>"
 
 };
 	
@@ -76,6 +79,7 @@ var instructions = {
 		instructions_texts.eighth_page,
 		instructions_texts.ninth_page,
 		instructions_texts.tenth_page,
+		instructions_texts.eleventh_page
 	],
 	show_clickable_nav: true,
 	show_page_number: true,

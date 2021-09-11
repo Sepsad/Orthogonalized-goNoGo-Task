@@ -1,0 +1,28 @@
+<form id="biography" style="text-align:left">
+    Finally, some questions about you and your experience in this study.
+    <div id="age">
+      <p><b>Age:</b></p>
+        <input type="text" name="ageText">
+    </div>
+    <div id="gender">
+      <p><b>Gender:</b></p>
+      <input type="radio" name="genderRadio" value="male"> Male<br>
+      <input type="radio" name="genderRadio" value="female"> Female<br>
+      <input type="radio" name="genderRadio" value="na"> Prefer not to say<br>
+      <input type="radio" name="genderRadio" value="other"> Prefer to self-describe:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="other_text">
+    </div>
+    <div id="language">
+      <p>Are you a <b>native speaker</b> of English?</p>
+      <input type="radio" name="languageRadio" value="0"> No<br>
+      <input type="radio" name="languageRadio" value="1"> Yes<br>
+    </div>
+    <div id="comments">
+      <p>Any other comments for us? (leave blank if none)</p>
+      <textarea name="comment_text" rows="5" cols="90"></textarea>
+    </div>
+    <div>
+      <br><button type="button" id='submit'>Submit</button>
+    </div>
+  </form>
+  
