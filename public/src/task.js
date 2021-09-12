@@ -6,8 +6,6 @@ timeline.push(consent);
 
 timeline.push(preload);
 
-
-
 timeline.push(first_welcome_page);
 
 // timeline.push(form_page)
@@ -23,7 +21,7 @@ timeline.push(instructions);
 //  instruction Questions
 timeline.push(instruction_questions);
 
-timeline.push(instruction_question_feedback)
+timeline.push(instruction_question_feedback);
 
 // instructuon Questions
 timeline.push(instructions_repeat);

@@ -1,6 +1,6 @@
 var before_instruction_text = {
 
-    first: "<p class= 'before_instruction'> We are going to do a game that involves images to find out what is the best strategy for them. </p>",
+    first: "<p class= 'before_instruction'> We are going to do a game that involves images to learn what is the best strategy for them. </p>",
     second: "<p class= 'before_instruction'> We will begin with some detailed instructions about the game. After that, your understanding of the game will be tested, and You must get <b>all</b> the comprehension questions right. </p>",
     third: "<p class= 'before_instruction'> If you get any wrong, we'll go through the instructions and test your understanding again until you get all the test questions correct. </p>",
     forth: "<p class= 'before_instruction'> Now, we will start going through the instructions.  </p>"
