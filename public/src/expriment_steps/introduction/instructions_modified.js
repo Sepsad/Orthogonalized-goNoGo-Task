@@ -32,17 +32,17 @@ var instructions_texts = {
 	forth_page : 
 		"<div class= 'instruction'> <p> After a short delay, you will see a circle on one side of the red rectangle is on the center of the screen.</p> "+
     "<p>Depending on what image you saw earlier, here, you execute your plan by either <u>pressing a button</u> (to indicate the circle side) or <u>withhold your response</u>. </p></div>" + 
-    "<img src = '../img/eighth_3_page.png' width='50%' height='50%'>",
+    "<img src = '../img/eighth_3_page.png' width='30%' height='30%'>",
   
 	fifth_page : 
 		"<p class= 'instruction'>  After a short delay, you will see one of three outcomes </p>" +
 		
 		"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
-		"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> '+ '<td> Win </td>" +
+		"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> "+"<td> Win </td>" +
 		"</tr><tr>" +
-		"<td style='font-size:40px;'>&#10060;&#128184;&#10060;</td>' + '<td> Lose </td>" +
+		"<td style='font-size:40px;'>&#10060;&#128184;&#10060;</td>"+"<td> Lose </td>" +
 		"</tr><tr>" +
-		"<td style='font-size:60px;'>&#x2796;</td>' + '<td> Neither win nor lose</td>" +
+		"<td style='font-size:60px;'>&#x2796;</td>"+"<td> Neither win nor lose</td>" +
 		"</tr></table>",
   
 	tenth_page :  
@@ -55,9 +55,9 @@ var instructions_texts = {
     "<p> For the losing condition you may either get &#x2796; or &#10060;&#128184;&#10060; </p>"+
     "<p> By doing the right thing when the circle appears (either <u>Press a Button</u> or <u>Withhold Response</u>) you can make the most favorable outcome more frequent.  </p></div>" + 
     "<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
-    "<td>Winning Condition</td> '+ '<td style='font-size:30px;'> &#9989;&#128176;&#9989; or &#x2796;</td>" +
+    "<td>Winning Condition</td> "+ "<td style='font-size:30px;'> &#9989;&#128176;&#9989; or &#x2796;</td>" +
     "</tr><tr>" +
-    "<td s>Losing Condtion</td>' + '<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
+    "<td s>Losing Condtion</td>" + "<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
     "</tr></table>",
 	eleventh_page : "<p class= 'instruction' >Now, we are going to check whether you've understood the previous instructions by asking some True/False questions." +
 	 "<br> <br>Plase note that you will not be able to proceed with the experiment until all of these comprehension questions are answered correctly </p>" +

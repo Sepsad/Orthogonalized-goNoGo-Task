@@ -32,18 +32,18 @@ var instructions_texts = {
 	forth_page : 
 		"<div class= 'instruction'> <p> After a short delay, you will see a circle on one side of the red rectangle is on the center of the screen.</p> "+
     "<p>Depending on what image you saw earlier, here, you execute your plan by either <u>pressing a button</u> (to indicate the circle side) or <u>withhold your response</u>. </p></div>" + 
-    "<img src = '../img/eighth_3_page.png' width='50%' height='50%'>",
+    "<img src = '../img/eighth_3_page.png' width='30%' height='30%'>",
   
 	fifth_page : 
-		"<p class= 'instruction'>  After a short delay, you will see one of three outcomes </p>" +
+	"<p class= 'instruction'>  After a short delay, you will see one of three outcomes </p>" +
 		
-		"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
-		"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> '+ '<td> Win </td>" +
-		"</tr><tr>" +
-		"<td style='font-size:40px;'>&#10060;&#128184;&#10060;</td>' + '<td> Lose </td>" +
-		"</tr><tr>" +
-		"<td style='font-size:60px;'>&#x2796;</td>' + '<td> Neither win nor lose</td>" +
-		"</tr></table>",
+	"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
+	"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> "+"<td> Win </td>" +
+	"</tr><tr>" +
+	"<td style='font-size:40px;'>&#10060;&#128184;&#10060;</td>"+"<td> Lose </td>" +
+	"</tr><tr>" +
+	"<td style='font-size:60px;'>&#x2796;</td>"+"<td> Neither win nor lose</td>" +
+	"</tr></table>",
   
 	tenth_page :  
 		"<div class= 'instruction'> <p> <b>Remember that, in this task, the outcome is probabilistic.</b></p> "+ 
@@ -55,9 +55,9 @@ var instructions_texts = {
     "<p> For the losing condition you may either get &#x2796; or &#10060;&#128184;&#10060; </p>"+
     "<p> By doing the right thing when the circle appears (either <u>Press a Button</u> or <u>Withhold Response</u>) you can make the most favorable outcome more frequent.  </p></div>" + 
     "<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
-    "<td>Winning Condition</td> '+ '<td style='font-size:30px;'> &#9989;&#128176;&#9989; or &#x2796;</td>" +
+    "<td>Winning Condition</td> "+ "<td style='font-size:30px;'> &#9989;&#128176;&#9989; or &#x2796;</td>" +
     "</tr><tr>" +
-    "<td s>Losing Condtion</td>' + '<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
+    "<td s>Losing Condtion</td>" + "<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
     "</tr></table>",
 	eleventh_page : "<p class= 'instruction' >Now, we are going to check whether you've understood the previous instructions by asking some True/False questions." +
 	 "<br> <br>Plase note that you will not be able to proceed with the experiment until all of these comprehension questions are answered correctly </p>" +
@@ -97,12 +97,80 @@ var instructions = {
 	}
 }
 
+var score = 0;
+var comprehensionRounds = [];
+
+var correctAnswers = { Q0: "False", Q1: "True", Q2: "False" };
+
+var instruction_questions = {
+  type: "survey-multi-choice",
+  questions: [
+    {
+      prompt:
+        "<p style='text-align: left'>For some images, the best strategy is to press the right arrow key. For some other images, the best strategy is to press left arrow key.</p>",
+      options: ["True", "False"],
+      horizontal: true,
+    },
+    {
+      prompt:
+        "<p style='text-align: left'>I either press the left or right arrow on my keyboard (to indicate my choice) or press nothing.</p>",
+      options: ["True", "False"],
+      horizontal: true,
+    },
+    // {
+    //   prompt:
+    //     "<p style='text-align: left'>for each condition, I will get either ✅💰✅ or ❌💸❌.</p>",
+    //   options: ["True", "False"],
+    //   horizontal: true,
+    // },
+    {
+      prompt:
+        "<p style='text-align: left'>The game contains two different images.</p>",
+      options: ["True", "False"],
+      horizontal: true,
+    },
+  ],
+  required: true,
+  data: {},
+  on_load: function () {
+    document.getElementById("jspsych-progressbar-container").style.visibility =
+      "visible";
+  },
+  data: {},
+  on_finish: function (data) {
+	score = 0;
+    var responses = data.response;
+    var comprehensionTracker = [0, 0, 0];
+    var questionCounter = 0;
+
+	for( const Q in correctAnswers) {
+	
+		if(correctAnswers[Q] == responses[Q]){
+			score += 1;
+			comprehensionTracker[questionCounter] = 1;
+		}
+		questionCounter += 1;
+	}
+
+    comprehensionRounds.push(comprehensionTracker);
+
+	console.log(score);
+
+    jsPsych.data.addDataToLastTrial({
+      exp_stage: "instruction_questions",
+      exp_part: "instructions",
+      quiz_score: score,
+    });
+  },
+};
+
+
 
 var instructions_repeat = {
 	timeline: [instructions, instruction_questions, instruction_question_feedback],
 	data: {},
 	conditional_function: function() {
-		if(score == 4) {
+		if(score == 3) {
 			return false;
 		} else {
 			return true;
@@ -110,7 +178,7 @@ var instructions_repeat = {
 
 	},
 	loop_function: function() {
-		if(score == 4) {
+		if(score == 3) {
 			return false;
 		} else {
 			return true;

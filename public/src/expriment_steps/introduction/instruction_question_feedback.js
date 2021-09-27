@@ -2,9 +2,9 @@ var instruction_question_feedback = {
   type: "instructions",
   data: {},
   pages: function () {
-    if (score < 4) {
+    if (score < 3) {
       return [ "<p style='font-size:150px;'>&#9888;&#65039;</p>" +
-        "<div class= 'instruction'> You got " +score + "/4 correct. it looks as if you may not fully understand the task." +
+        "<div class= 'instruction'> You got " +score + "/3 correct. it looks as if you may not fully understand the task." +
         "<p>Please note that if you are unable to answer the questions correctly again, we will not be able to pay you. </p>" +
         "</div>" + "<p> Please click 'Next' to return to the instructions.</p>"
 

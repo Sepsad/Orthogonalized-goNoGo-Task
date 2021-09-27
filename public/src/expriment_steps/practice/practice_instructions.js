@@ -9,7 +9,7 @@ var practice_instructions_texts = {
 	first_page : 
 		"<p class= 'instruction'> Here are <u>images</u> you will see during the practice.<br> Note that you will get the <u>outcome</u> by taking the <u>best strategy</u>. </p>" +
 		"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:500px;border-spacing:1em;'><tr>" +
-		"<td> Image </td> '+ '<td> Best Strategy</td>' + '<td> Outcome</td>" +
+		"<td> Image </td> "+ "<td> Best Strategy</td>" + "<td> Outcome</td>" +
 		"</tr><tr>" +
 		"<td> <img src = '../img/stim/f1_1.png' width='80' height='80'> </td>" +
 		"<td> <img src = '../img/doing.png' width='100' height='80'></td>" +

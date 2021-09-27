@@ -31,19 +31,18 @@ var instructions_texts = {
 	forth_page : 
 		"<div class= 'instruction'> <p> After a short delay, you will see a circle on one side of the screen. </p> "+
     "<p>Depending on what image you saw earlier, here, you execute your plan by either <u>pressing a button</u> (to indicate the circle side) or <u>withhold your response</u>. </p></div>" + 
-    "<img src = '../img/eighth_3_page.png' width='50%' height='50%'>",
+    "<img src = '../img/eighth_3_page.png' width='30%' height='30%'>",
   
 	fifth_page : 
-		"<p class= 'instruction'>  After a short delay, you will see one of three outcomes: </p>" +
+	"<p class= 'instruction'>  After a short delay, you will see one of three outcomes </p>" +
 		
-		"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
-		"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> '+ '<td> Win </td>" +
-		"</tr><tr>" +
-		"<td style='font-size:40px;'>&#10060;&#128184;&#10060;</td>' + '<td> Lose </td>" +
-		"</tr><tr>" +
-		"<td style='font-size:60px;'>&#x2796;</td>' + '<td> Neither win nor lose</td>" +
-		"</tr></table>",
-  
+	"<table style='margin-left:auto;margin-right:auto;table-layout:fixed !important; width:650px;border-spacing:3em;'><tr>" +
+	"<td style='font-size:40px;'>&#9989;&#128176;&#9989;</td> "+"<td> Win </td>" +
+	"</tr><tr>" +
+	"<td style='font-size:40px;'>&#10060;&#128184;&#10060;</td>"+"<td> Lose </td>" +
+	"</tr><tr>" +
+	"<td style='font-size:60px;'>&#x2796;</td>"+"<td> Neither win nor lose</td>" +
+	"</tr></table>",
 	ninth_page :  
 		"<div class= 'instruction'> <p> <b>Remember that, in this task, the outcome is probabilistic.</b></p> "+ 
     "<p> <b> This means that, sometimes even if you know the best strategy, you may still not win, or you may still end up losing.</b> </p>" +
