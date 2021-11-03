@@ -5,7 +5,7 @@ var express = require("express");
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
-app.use("/jsPsych", express.static(__dirname + '/jsPsych'));
+app.use("/jspsych", express.static(__dirname + '/jspsych'));
 console.log(__dirname + '/jsPsych');
 app.use("/scripts", express.static(__dirname + '/scripts'));
 
@@ -21,7 +21,7 @@ app.get("/", function (request, response) {
 
 
 // SERVER
-var server = app.listen(process.env.PORT || 5000, function(){
+var server = app.listen(process.env.PORT || 3000, function(){
     console.log("listening to port %d", server.address().port);
 }); 
 

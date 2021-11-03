@@ -8,7 +8,7 @@ var instruction_questions = {
   questions: [
     {
       prompt:
-        "<p style='text-align: left'>For some images, the best strategy is to press the right arrow key. For some other images, the best strategy is to press left arrow key.</p>",
+        "<p style='text-align: left'>For some images, the best strategy is always to press the right arrow key. For some other images, the best strategy is always to press the left arrow key.</p>",
       options: ["True", "False"],
       horizontal: true,
     },
@@ -18,18 +18,12 @@ var instruction_questions = {
       options: ["True", "False"],
       horizontal: true,
     },
-    {
-      prompt:
-        "<p style='text-align: left'>for each condition, I will get either ✅💰✅ or ❌💸❌.</p>",
-      options: ["True", "False"],
-      horizontal: true,
-    },
-    {
-      prompt:
-        "<p style='text-align: left'>The game contains two different images.</p>",
-      options: ["True", "False"],
-      horizontal: true,
-    },
+    // {
+    //   prompt:
+    //     "<p style='text-align: left'>The game contains two different images.</p>",
+    //   options: ["True", "False"],
+    //   horizontal: true,
+    // },
   ],
   required: true,
   data: {},

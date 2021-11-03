@@ -1,3 +1,9 @@
+var repeat_counts = 0;
+
+var goodbye_fail_quiz = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
+      "<h3 style= 'font-size:xx-large; color:crimson'>Due to not passing the quiz, your session has expired!</h3>" +
+      "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
+
 var instructions_texts = {
 	welcome_page : 
 		"<h2 class= 'instruction' style = 'font-size: xx-large'> <b>let's learn how the game works!</b>  &#127891; </h2><p> Click the <q>Next</q> button to continue.</p>",
@@ -24,6 +30,8 @@ var instructions_texts = {
 	ninth_page : 
 		"<div class= 'instruction' style= 'text-align: center'><p><b>The meaning of each image will be constant throughout the game. </b></p> " +
 		"<p> <b>However, the game is not easy, so we encourage exploration of all options.</b></p> </div>",
+	ninth_p_page : 
+	"<div class= 'instruction' style= 'text-align: center'><p><b>Please note that there is <u>no relation</u>  between the location of  circles and images.</b></p> </div>",
   
 	third_page : 
 		"<div class= 'instruction'><p> At the beginning of each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must <u>DECIDE</u> if you will <u>press a button</u> or <u>withhold your response</u> in the next stage.</p></div> "+
@@ -60,7 +68,7 @@ var instructions_texts = {
     "<td s>Losing Condtion</td>" + "<td style='font-size:30px;'>&#x2796; or &#10060;&#128184;&#10060;</td>" +
     "</tr></table>",
 	eleventh_page : "<p class= 'instruction' >Now, we are going to check whether you've understood the previous instructions by asking some True/False questions." +
-	 "<br> <br>Plase note that you will not be able to proceed with the experiment until all of these comprehension questions are answered correctly </p>" +
+	 "</p>" +
 	 "<p> Click 'Next' to begin the test.</p>"
 
 };
@@ -78,6 +86,7 @@ var instructions = {
 		instructions_texts.seventh_page,
 		instructions_texts.eighth_page,
 		instructions_texts.ninth_page,
+		instructions_texts.ninth_p_page,
 		instructions_texts.tenth_page,
 		instructions_texts.eleventh_page
 	],
@@ -107,7 +116,7 @@ var instruction_questions = {
   questions: [
     {
       prompt:
-        "<p style='text-align: left'>For some images, the best strategy is to press the right arrow key. For some other images, the best strategy is to press left arrow key.</p>",
+        "<p style='text-align: left'>For some images, the best strategy is always to press the right arrow key. For some other images, the best strategy is always to press the left arrow key.</p>",
       options: ["True", "False"],
       horizontal: true,
     },
@@ -154,7 +163,14 @@ var instruction_questions = {
 
     comprehensionRounds.push(comprehensionTracker);
 
-	console.log(score);
+	console.log("your score is: ",score);
+
+	if ((score < 3) & (repeat_counts > 0) ) {
+		jsPsych.data.addDataToLastTrial({
+			exp_final_status:"not_completed",
+		  });
+		jsPsych.endExperiment(goodbye_fail_quiz);
+	}
 
     jsPsych.data.addDataToLastTrial({
       exp_stage: "instruction_questions",
@@ -173,15 +189,20 @@ var instructions_repeat = {
 		if(score == 3) {
 			return false;
 		} else {
+			repeat_counts = repeat_counts +1;
 			return true;
 		}
 
 	},
-	loop_function: function() {
-		if(score == 3) {
-			return false;
-		} else {
-			return true;
-		}
-	},
+	// loop_function: function() {
+	// 	if(score == 3) {
+	// 		return false;
+	// 	} else {
+	// 		repeat_counts = repeat_counts +1;
+	// 		console.log('repeat count:', repeat_counts);
+	// 		jsPsych.endExperiment(goodbye_fail_quiz);
+	// 		// return true;
+			
+	// 	}
+	// },
 };

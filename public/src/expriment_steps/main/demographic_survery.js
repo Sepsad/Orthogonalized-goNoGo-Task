@@ -4,18 +4,18 @@ var demographic_survey = {
   html:
   // Genre
   '<p align="left">(1) What is your gender? <input type="radio" id="male"'+
-  'name="gender" value="male"checked label for="male">male</label>'+
+  'name="gender" value="male"checked label for="male" required>male </label>'+
   '<input type="radio" id="female"'+
-  'name="gender" value="female"checked label for="female">female </label>'+
-  '<input type="radio" id="nb"'+
-  'name="gender" value="nb"checked label for="nb">non binay</label></p>'+
+  'name="gender" value="female"checked label for="female" required>female </label>'+
+  '<input type="radio" id="other"'+
+  'name="gender" value="other"checked label for="other" required>other</label></p>'+
   // Date de naissance
   '<p align="left"><label for="ddn">(2) How old are you? </label><input type="number" id="age" name="age"'+
-  'value="" min="18" max="80"></p>'+
+  'value="" min="18" max="80" required</p>'+
   // Niveau étude
   "<p align='left'>(3) Education Level: "+
   '<label for="eduLevel"></label>'+
-  '<select name="eduLevel" id="academic_select>"'+
+  '<select name="eduLevel" id="academic_select required>"'+
   '<option value = "">Choose</option>'+
   '<option value = "lessHigh"> Less Than High School</option>'+
   '<option value = "High">High School Graduate</option>'+
@@ -65,11 +65,19 @@ var demographic_survey = {
   on_finish: function (data) {
       // console.log(data)
       completion_code = jsPsych.data.get().last(1).values()[0].experiment_id;
+
+      jsPsych.data.addDataToLastTrial({
+        exp_final_status:"fully_completed",
+      });
+
+
       var goodbye_message = "<h1><strong> Thank you very much for participating in this game!</strong></h1>" + 
       "<p>You have now completed the first round of the study.</p>" +
+      // "<p>You have now completed the study.</p>" +
       "<h3><strong>Your completion code is: <font color='red'>"+ completion_code +"</font></strong></h3>" +
       "<p>Please copy and paste this into the MTurk window to claim payment.</p>" +
-      "<p> We will send you a reminder email in 2 weeks to participate in the second round of the study.</p>" +
+      "<p> We will remind you (via email) in 2 weeks to participate in the second round of the study.</p>" +
+      "<p>Also, you will be able to find the second round of the experiment where you found this experiment.</p>" +
       "<p>If you have any questions about Go-NoGo Game, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>"
       jsPsych.endExperiment(goodbye_message);
   }

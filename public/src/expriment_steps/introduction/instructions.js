@@ -23,6 +23,8 @@ var instructions_texts = {
   
 	eighth_page : 
 		"<p class= 'instruction'> <b>The meaning of each image will be constant throughout the game. <br> However, the game is not easy, so we encourage exploration of all options.</b> </p>",
+		ninth_p_page : 
+	"<div class= 'instruction' style= 'text-align: center'><p><b>Please note that there is <u>no relation</u> between the location of  circles and images.</b></p> ",
   
 	third_page : 
 		"<div class= 'instruction'><p> On each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must DECIDE if you will press a button or withhold your response in the next stage.</p></div> "+

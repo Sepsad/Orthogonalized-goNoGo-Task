@@ -24,6 +24,8 @@ var instructions_texts = {
 	ninth_page : 
 		"<div class= 'instruction' style= 'text-align: center'><p><b>The meaning of each image will be constant throughout the game. </b></p> " +
 		"<p> <b>However, the game is not easy, so we encourage exploration of all options.</b></p> </div>",
+		ninth_p_page : 
+	"<div class= 'instruction' style= 'text-align: center'><p><b>Please note that there is <u>no relation</u> between the location of  circles and images.</b></p> </div>",
   
 	third_page : 
 		"<div class= 'instruction'><p> At the beginning of each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must <u>DECIDE</u> if you will <u>press a button</u> or <u>withhold your response</u> in the next stage.</p></div> "+
@@ -78,6 +80,7 @@ var instructions = {
 		instructions_texts.seventh_page,
 		instructions_texts.eighth_page,
 		instructions_texts.ninth_page,
+		instructions_texts.ninth_p_page,
 		instructions_texts.tenth_page,
 		instructions_texts.eleventh_page
 	],

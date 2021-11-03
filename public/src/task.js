@@ -2,7 +2,11 @@ var timeline = [];
 
 // full screen mode
 
-timeline.push(consent);
+// timeline.push(consent);
+timeline.push(consent_first_page);
+timeline.push(consent_second_page);
+
+
 
 timeline.push(preload);
 
@@ -84,8 +88,8 @@ jsPsych.init({
   on_interaction_data_update: on_interaction_data_update,
   show_progress_bar: true,
   exclusions: {
-    min_width: 800,
-    min_height: 800,
+    min_width: 600,
+    min_height: 600,
   },
   on_finish: function () {
 
