@@ -1,9 +1,7 @@
 var count_of_blur = 0;
 
-var goodbye = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
-      "<h3 style= 'font-size:xx-large; color:crimson'>Due to changing tab/window, your session has expired!</h3>" +
-      "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
 
+var is_expired_by_changing_tab = false;
 
 function on_interaction_data_update(data) {
 	var trial = jsPsych.currentTrial();
@@ -18,10 +16,10 @@ function on_interaction_data_update(data) {
 	if(data.event == 'blur') {
 		if (count_of_blur < 1) {
 
+			
+				if((jsPsych.data.getLastTrialData().values().length > 0)) {
 
-				if((jsPsych.data.getLastTrialData().values()[0].trial_type != 'external-html')) {
-
-					if(jsPsych.data.getLastTrialData().values().length > 0){
+					if(jsPsych.data.getLastTrialData().values()[0].trial_type != 'external-html'){
 
 					jsPsych.pauseExperiment();
 
@@ -44,14 +42,22 @@ function on_interaction_data_update(data) {
 
 				}
 		}
+		
 		else {
-			if((jsPsych.data.getLastTrialData().values()[0].trial_type != 'external-html'))
+			if(jsPsych.data.getLastTrialData().values().length > 0)
 			{
-				if(jsPsych.data.getLastTrialData().values().length > 0){
+				if(jsPsych.data.getLastTrialData().values()[0].trial_type != 'external-html') {
+					is_expired_by_changing_tab = true;
 					jsPsych.data.addDataToLastTrial({
-						exp_final_status:"not_completed",
+						exp_final_status:"not_completed_by_changing_tab",
 					  });
-					jsPsych.endExperiment(goodbye);
+
+					  jsPsych.endExperiment();
+					// var goodbye = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
+					//   "<h3 style= 'font-size:xx-large; color:crimson'>Due to changing tab/window, your session has expired!</h3>" +
+					//   "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
+					// jsPsych.endExperiment(goodbye);
+					
 				}
 			}
 		}

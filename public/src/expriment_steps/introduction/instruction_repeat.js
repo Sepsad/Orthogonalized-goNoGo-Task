@@ -1,8 +1,6 @@
 var repeat_counts = 0;
 
-var goodbye_fail_quiz = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
-      "<h3 style= 'font-size:xx-large; color:crimson'>Due to not passing the quiz, your session has expired!</h3>" +
-      "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
+
 
 var instructions_texts = {
 	welcome_page : 
@@ -147,6 +145,10 @@ var instruction_questions = {
   },
   data: {},
   on_finish: function (data) {
+
+	if(is_expired_by_changing_tab){
+		return;
+	}
 	score = 0;
     var responses = data.response;
     var comprehensionTracker = [0, 0, 0];
@@ -167,9 +169,13 @@ var instruction_questions = {
 
 	if ((score < 3) & (repeat_counts > 0) ) {
 		jsPsych.data.addDataToLastTrial({
-			exp_final_status:"not_completed",
+			exp_final_status:"not_completed_by_failing_quiz",
 		  });
-		jsPsych.endExperiment(goodbye_fail_quiz);
+	// 	var goodbye_fail_quiz = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
+    //   "<h3 style= 'font-size:xx-large; color:crimson'>Due to not passing the quiz, your session has expired!</h3>" +
+    //   "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
+	// 	jsPsych.endExperiment(goodbye_fail_quiz);
+	jsPsych.endExperiment();
 	}
 
     jsPsych.data.addDataToLastTrial({
@@ -181,6 +187,32 @@ var instruction_questions = {
 };
 
 
+var instruction_question_feedback = {
+	type: "instructions",
+	data: {},
+	pages: function () {
+	  if (score < 3) {
+		return [ "<p style='font-size:150px;'>&#9888;&#65039;</p>" +
+		  "<div class= 'instruction'> You got " +score + "/3 correct. it looks as if you may not fully understand the task." +
+		  "<p><strong style='color:crimson'>Please note that if you are unable to answer the questions correctly <u style='color:red'>AGAIN</u>, we will not be able to pay you. </strong> </p>" +
+		  "</div>" + "<p> Please click 'Next' to return to the instructions.</p>"
+  
+		];
+	  } else {
+		return ["<h1 class= 'instruction'>Great! You got them all right! </h1> <p>Click 'Next' to proceed.</p>"];
+	  }
+	},
+	show_clickable_nav: true,
+	on_finish: function(data) {
+		
+
+	  jsPsych.data.addDataToLastTrial({
+		  exp_stage:"instruction_questions_feedback",
+		  exp_part: "instructions"
+	  })
+  }
+  };
+  
 
 var instructions_repeat = {
 	timeline: [instructions, instruction_questions, instruction_question_feedback],

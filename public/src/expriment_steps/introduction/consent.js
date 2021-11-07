@@ -16,8 +16,8 @@ var consent = {
 
 var consent_first_page = {
   type: "external-html",
-  url: "../../views/consent_first_page.html",
-  // url: "https://raw.githubusercontent.com/Sepsad/Orthogonalized-goNoGo-Task/main/public/views/consent_for_pilot.html",
+  // url: "../../views/consent_first_page.html",
+  url: "https://raw.githubusercontent.com/Sepsad/Orthogonalized-goNoGo-Task/main/public/views/consent_first_page.html",
   //   check_fn: function () {
   //     return true;
   //   },
@@ -31,8 +31,8 @@ var consent_first_page = {
 
 var consent_second_page = {
   type: "external-html",
-  url: "../../views/consent_second_page.html",
-  // url: "https://raw.githubusercontent.com/Sepsad/Orthogonalized-goNoGo-Task/main/public/views/consent_for_pilot.html",
+  // url: "../../views/consent_second_page.html",
+  url: "https://raw.githubusercontent.com/Sepsad/Orthogonalized-goNoGo-Task/main/public/views/consent_second_page.html",
   //   check_fn: function () {
   //     return true;
   //   },

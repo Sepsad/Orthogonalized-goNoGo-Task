@@ -69,16 +69,17 @@ var demographic_survey = {
       jsPsych.data.addDataToLastTrial({
         exp_final_status:"fully_completed",
       });
+      jsPsych.endExperiment();
 
-
-      var goodbye_message = "<h1><strong> Thank you very much for participating in this game!</strong></h1>" + 
-      "<p>You have now completed the first round of the study.</p>" +
-      // "<p>You have now completed the study.</p>" +
-      "<h3><strong>Your completion code is: <font color='red'>"+ completion_code +"</font></strong></h3>" +
-      "<p>Please copy and paste this into the MTurk window to claim payment.</p>" +
-      "<p> We will remind you (via email) in 2 weeks to participate in the second round of the study.</p>" +
-      "<p>Also, you will be able to find the second round of the experiment where you found this experiment.</p>" +
-      "<p>If you have any questions about Go-NoGo Game, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>"
-      jsPsych.endExperiment(goodbye_message);
+      // var goodbye_message = "<h1><strong> Thank you very much for participating in this game!</strong></h1>" + 
+      // "<p>You have now completed the first round of the study.</p>" +
+      // // "<p>You have now completed the study.</p>" +
+      // "<h3><strong>Your completion code is: <font color='red'>"+ completion_code +"</font></strong></h3>" +
+      // "<p>Please copy and paste this into the MTurk window to claim payment.</p>" +
+      // "<p> We will remind you (via email) in 2 weeks to participate in the second round of the study.</p>" +
+      // "<p>Also, you will be able to find the second round of the experiment where you found this experiment.</p>" +
+      // "<p>If you have any questions about Go-NoGo Game, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>"
+      // jsPsych.endExperiment(goodbye_message);
+      
   }
   };
