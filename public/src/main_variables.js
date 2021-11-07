@@ -9,7 +9,9 @@ const images_preload = ['../img/welcome.gif',
                 "../img/stim/f1_1.png","../img/stim/f1_2.png", "../img/stim/f1_3.png","../img/stim/f1_4.png",
                 '../img/page1.png', '../img/page2.png', '../img/stim/f3_1.png', '../img/eighth_3_page.png',
                 "../img/doing.png", "../img/holding.png",
-                "../img/stim/f4_1.png","../img/stim/f4_2.png", "../img/stim/f4_3.png","../img/stim/f4_4.png"
+                // "../img/stim/f4_1.png","../img/stim/f4_2.png", "../img/stim/f4_3.png","../img/stim/f4_4.png",
+                "../img/stim/f2_1.png","../img/stim/f2_2.png", "../img/stim/f2_3.png","../img/stim/f2_4.png",
+
               ];
 
 var preload = {

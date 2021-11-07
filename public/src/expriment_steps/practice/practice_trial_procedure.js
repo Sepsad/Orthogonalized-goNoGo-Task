@@ -3,6 +3,19 @@ squares0 = ["f1_1", "f1_2", "f1_3", "f1_4"];
 stim0 = make_stimuli(true, squares0, "block_p");
 reps_in_trial = 3;
 console.log(stim0);
+var practice_stimulus = {
+  type: 'image-keyboard-response',
+  stimulus : jsPsych.timelineVariable('stimulus'),
+  choices: jsPsych.NO_KEYS,
+  data: jsPsych.timelineVariable('data'),
+  trial_duration : stimuli_duration,
+  on_finish: function(data) {
+
+    jsPsych.data.addDataToLastTrial({
+      exp_stage:"practice_stimulus",
+    })
+  }
+};
 
 var practice_trial_procedure = {
   timeline: [

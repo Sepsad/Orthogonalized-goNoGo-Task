@@ -4,19 +4,19 @@ feedback_duration = 1000 ;
 target_detection_task_duration = 1500;
 
 
-var practice_stimulus = {
-    type: 'image-keyboard-response',
-    stimulus : jsPsych.timelineVariable('stimulus'),
-    choices: jsPsych.NO_KEYS,
-    data: jsPsych.timelineVariable('data'),
-    trial_duration : stimuli_duration,
-    on_finish: function(data) {
+// var practice_stimulus = {
+//     type: 'image-keyboard-response',
+//     stimulus : jsPsych.timelineVariable('stimulus'),
+//     choices: jsPsych.NO_KEYS,
+//     data: jsPsych.timelineVariable('data'),
+//     trial_duration : stimuli_duration,
+//     on_finish: function(data) {
 
-      jsPsych.data.addDataToLastTrial({
-        exp_stage:"practice_stimulus",
-      })
-    }
-};
+//       jsPsych.data.addDataToLastTrial({
+//         exp_stage:"practice_stimulus",
+//       })
+//     }
+// };
 
 // fixation pause
 var practice_fixation_before_target_detection = {
