@@ -14,7 +14,7 @@ var instructions_texts = {
 		"<div class= 'instruction'> <p>There are 4 of these images. One image will appear at the beginning of each trial. </p> "+
 		" <p>Depending on what image you see, by trial and error you must find out what is best to do (to press a button or not to press it) when you see the circle. </p>"+
 		"<p>By finding out what to do for each image, you will increase your chances of winning and decrease the chance of losing. </p> </div>" + 
-  	"<img src='../img/page2.png' width='70%' height='70%'>",
+  	"<img src='./img/page2.png' width='70%' height='70%'>",
   
 	seventh_page : 
 		"<div class= 'instruction'><p>Some of the images predict that you will win some money or get nothing.<br>Other images predict that you will lose some money or lose nothing.</p>"+
@@ -28,12 +28,12 @@ var instructions_texts = {
   
 	third_page : 
 		"<div class= 'instruction'><p> On each trial you will see one image. You must not press any button at this point. </p> <p> Here, you must DECIDE if you will press a button or withhold your response in the next stage.</p></div> "+
-    " <p> Here is an example of the type of image you will see.</p> <img src='../img/stim/f3_1.png' width='30%' height='30%'>",
+    " <p> Here is an example of the type of image you will see.</p> <img src='./img/stim/f3_1.png' width='30%' height='30%'>",
   
 	forth_page : 
 		"<div class= 'instruction'> <p> After a short delay, you will see a circle on one side of the screen. </p> "+
     "<p>Depending on what image you saw earlier, here, you execute your plan by either <u>pressing a button</u> (to indicate the circle side) or <u>withhold your response</u>. </p></div>" + 
-    "<img src = '../img/eighth_3_page.png' width='30%' height='30%'>",
+    "<img src = './img/eighth_3_page.png' width='30%' height='30%'>",
   
 	fifth_page : 
 	"<p class= 'instruction'>  After a short delay, you will see one of three outcomes </p>" +

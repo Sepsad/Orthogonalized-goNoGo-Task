@@ -15,19 +15,19 @@ function shuffler(listy){
 function make_stimuli(trial, stim, block_num) {  // generates the stimuli from the square images
   var stimulus = [
     {
-      stimulus: '../img/stim/' + stim[0] + '.png',
+      stimulus: './img/stim/' + stim[0] + '.png',
       data: {color: stim[0], cond: 1, cond_action: 'go', cond_outcome: 'win',  exp_part: 'main', block: block_num}
     },
     {
-      stimulus: '../img/stim/' + stim[1] + '.png',
+      stimulus: './img/stim/' + stim[1] + '.png',
       data: {color: stim[1], cond: 2, cond_action: 'nogo', cond_outcome: 'win'  ,exp_part: 'main', block: block_num}
     },
     {
-      stimulus: '../img/stim/' + stim[2] + '.png',
+      stimulus: './img/stim/' + stim[2] + '.png',
       data: {color: stim[2], cond: 3, cond_action: 'go', cond_outcome: 'avoidPun' ,exp_part: 'main', block: block_num}
     },
     {
-      stimulus: '../img/stim/' + stim[3] + '.png', 
+      stimulus: './img/stim/' + stim[3] + '.png', 
       data: {color: stim[3], cond: 4, cond_action: 'nogo', cond_outcome: 'avoidPun' ,exp_part: 'main', block: block_num}
     }
   ]
