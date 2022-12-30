@@ -1,0 +1,42 @@
+#jspsych-circle-stimulus{
+    border:3px solid red; 
+    padding: 0;
+    margin: auto;
+    display: block;
+    /* position: absolute; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+  
+  }
+  
+  
+  .instruction {
+    font-size: larger;
+    text-align: justify;
+    text-justify: inter-word;
+    background-color: white;
+    /* width: 600px; */
+    width: 45vw;
+    border: 5px solid green;
+    padding:20px;
+    /* margin: 10px; */
+    margin: auto;
+  }
+
+  .before_instruction {
+    font-size: larger;
+    text-align: justify;
+    text-justify: inter-word;
+    background-color: white;
+    /* width: 600px; */
+    width: 45vw;
+    border: 10px solid transparent;
+    padding:20px;
+    /* margin: 10px; */
+    margin: auto;
+  }
+
+  .jspsych-survey-multi-choice-text {
+    text-align: left;
+  }
