@@ -57,14 +57,14 @@ var main_fixation_before_target_detection = {
 // target detection
 var main_target_detection_task = {
   type: 'circle-keyboard-response',
-  choices: ['ArrowLeft', 'ArrowRight'],
+  choices: ['K', 'D', 'J', 'F'],
   data: jsPsych.timelineVariable('data'),
   trial_duration: target_detection_task_duration,
 
   on_finish: function(data){
 
     data.choice = '';
-    if(data.response == 'arrowleft' || data.response == 'arrowright') {
+    if(data.response == 'k' || data.response == 'd' || data.response == 'j' || data.response == 'f') {
       data.choice = 'go';
     } else if (data.response == null) {
       data.choice = 'nogo';
