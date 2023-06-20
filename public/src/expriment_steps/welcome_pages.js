@@ -1,7 +1,7 @@
 var first_welcome_page ={
 	type: 'html-button-response',
 	stimulus: "<img src='../img/welcome.gif' style='height: 200px; '></img> "+
-	"<h1>Welcome to Go/NoGO Game</h1> <p>You will earn <u>$5 + a possible bonus</u> for completing this game.</p> <p> This game will take approximately 25 minutes to complete <br>Click on START when you are ready!</p>",
+	"<h1>به بازی  Go/NoGO خوش آمدید.</h1> <p>هرکدام از شما   <u>۴۰۰ تومان + جایزه تلاش</u> برای انجام این بازی خواهید گرفت.</p> <p> این بازی حدود ۲۵ دقیقه طول خواهد کشید.  <br>هر موقع آماده بودید START را فشار دهید</p>",
 	choices: ['START'],
 	data: {},
 	on_load: function() {

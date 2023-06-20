@@ -28,6 +28,7 @@ var practice_instructions_texts = {
 		"<td style='font-size:15px;'> &#10060;&#128184;&#10060; or &#x2796;</td>" +
 		"</tr></table>",
 
+
 	first_prime_page : 
 		"<p style='font-size:60px'> &#10071; </p>" + 
 		"<p class= 'instruction'> <b>You will see different images during the actual game. </b> </p>",
