@@ -1,21 +1,21 @@
 var score = 0;
 var comprehensionRounds = [];
 
-var correctAnswers = { Q0: "False", Q1: "True", Q2: "False", Q3: "False" };
+var correctAnswers = { Q0: "False", Q1: "درست", Q2: "False", Q3: "False" };
 
 var instruction_questions = {
   type: "survey-multi-choice",
   questions: [
     {
       prompt:
-        "<p style='text-align: left'>For some images, the best strategy is always to press the right arrow key. For some other images, the best strategy is always to press the left arrow key.</p>",
-      options: ["True", "False"],
+        "<p style='text-align: left'>برای برخی از تصاویر، بهترین استراتژی همیشه فشار دادن کلید J است. برای برخی از تصاویر دیگر، بهترین استراتژی همیشه فشار دادن کلید F است.</p>",
+      options: ["درست", "غلط"],
       horizontal: true,
     },
     {
       prompt:
-        "<p style='text-align: left'>I either press the left or right arrow on my keyboard (to indicate my choice) or press nothing.</p>",
-      options: ["True", "False"],
+        "<p style='text-align: left'>برای نشان دادن انتخابم دکمه‌های F  یا J را روی صفحه کلید فشار می دهم یا چیزی را فشار نمی دهم.</p>",
+      options: ["درست", "غلط"],
       horizontal: true,
     },
     // {

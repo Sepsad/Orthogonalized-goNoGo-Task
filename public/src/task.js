@@ -23,12 +23,12 @@ timeline.push(first_welcome_page);
 timeline.push(instructions);
 
 //  instruction Questions
-// timeline.push(instruction_questions);
+timeline.push(instruction_questions);
 
-// timeline.push(instruction_question_feedback);
+timeline.push(instruction_question_feedback);
 
 // instructuon Questions
-// timeline.push(instructions_repeat);
+timeline.push(instructions_repeat); 
 
 // practice code
 timeline.push(practice_instruction);
@@ -60,7 +60,7 @@ for (i = 0; i < stims_modified.length; i++) {
 
 timeline.push(main_end_bonus_block);
 
-timeline.push(demographic_survey);
+// timeline.push(demographic_survey);
 
 // timeline.push(goodbye_page);
 // demographic survey code
@@ -96,39 +96,42 @@ jsPsych.init({
 
     exp_status = jsPsych.data.getLastTrialData().values()[0].exp_final_status;
     
+    completion_code = jsPsych.data.get().last(1).values()[0].experiment_id;
+
+    jsPsych.data.get().localSave('csv','data_pilot_for_group_pavlovian'+ completion_code +'.csv');
 
     if( exp_status == "fully_completed"){
 
-      completion_code = jsPsych.data.get().last(1).values()[0].experiment_id;
-      var goodbye_message = "<h1><strong> Thank you very much for participating in this game!</strong></h1>" + 
-      "<p>You have now completed the first round of the study.</p>" +
+      // completion_code = jsPsych.data.get().last(1).values()[0].experiment_id;
+      var goodbye_message = "<h1><strong> بابت شرکت کردن در این بازی بسیار متشکریم!</strong></h1>";
+      // "<p>You have now completed the first round of the study.</p>" +
       // "<p>You have now completed the study.</p>" +
-      "<h3><strong>Your completion code is: <font color='red'>"+ completion_code +"</font></strong></h3>" +
-      "<p>Please copy and paste this into the MTurk window to claim payment.</p>" +
-      "<p> We will remind you (via email) in 2 weeks to participate in the second round of the study.</p>" +
-      "<p>Also, you will be able to find the second round of the experiment where you found this experiment.</p>" +
-      "<p>If you have any questions about Go-NoGo Game, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>";
+      // "<h3><strong>Your completion code is: <font color='red'>"+ completion_code +"</font></strong></h3>" +
+      // "<p>Please copy and paste this into the MTurk window to claim payment.</p>" +
+      // "<p> We will remind you (via email) in 2 weeks to participate in the second round of the study.</p>" +
+      // "<p>Also, you will be able to find the second round of the experiment where you found this experiment.</p>" +
+      // "<p>If you have any questions about Go-NoGo Game, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>";
 
       jsPsych.getDisplayElement().innerHTML = goodbye_message;
     }
     else if(exp_status == 'not_completed_by_failing_quiz') {
-      console.log("vared if fail shod")
+      // console.log("vared if fail shod")
       var goodbye_message = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
-      "<h3 style= 'font-size:xx-large; color:crimson'>Due to not passing the quiz, your session has expired!</h3>" +
-      "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
+      "<h3 style= 'font-size:xx-large; color:crimson'>به دلیل پاس نکردن کوییز، آزمایش شما به پایان رسیده است!</h3>";
+      // "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
 		jsPsych.getDisplayElement().innerHTML = goodbye_message;
 
     }
     // else if(exp_status == 'not_completed_by_changing_tab'){
-    if(is_expired_by_changing_tab){
-      console.log("vared if change tab shod")
-      var goodbye_message = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
-      "<h3 style= 'font-size:xx-large; color:crimson'>Due to changing tab/window, your session has expired!</h3>" +
-      "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
+    // if(is_expired_by_changing_tab){
+    //   console.log("vared if change tab shod")
+    //   var goodbye_message = "<h1 style= 'font-size:100px;'><strong> ⚠️ </strong></h1>" + 
+    //   "<h3 style= 'font-size:xx-large; color:crimson'>Due to changing tab/window, your session has expired!</h3>" +
+    //   "<p style= 'font-size:large;'>Unfortunately, because of this you can't continue the experiment and we would not be able you pay you.</p>" ;
 
-      jsPsych.getDisplayElement().innerHTML = goodbye_message;
+    //   jsPsych.getDisplayElement().innerHTML = goodbye_message;
 
-    }
+    // }
   },
 });
 
