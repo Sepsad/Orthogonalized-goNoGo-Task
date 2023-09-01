@@ -23,7 +23,7 @@ timeline.push(first_welcome_page);
 timeline.push(instructions);
 
 //  instruction Questions
-// timeline.push(instruction_questions);
+timeline.push(instruction_questions);
 
 // timeline.push(instruction_question_feedback);
 
